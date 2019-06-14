@@ -1,19 +1,12 @@
 {
-	"name": "json",
-	"authors": [
-		"ozan"
-	],
-	"description": "UI Manufaktur's JSON library",
-	"copyright": "Copyright © 2017 - UI Manufaktur",
-	"license": "Apache-2.0",
-	"targetType":"library",
-	"sourcePaths": [
-		"../core",
-		"../oop",
-		"./"
-	],
-	"importPaths": [
-		"../core",
-		"../oop",
-		"./"
-	]}
+	"name": "uim-json",
+	"authors": [ "UI Manufaktur Team" ],
+	"description": "[Test] D Library for JSON",
+	"copyright": "Copyright © 2019, UI Manufaktur UG",
+	"license": "Apache 2.0",
+	"targetType": "library",
+	"dependencies": {
+		"uim-core": "~>0.19.6",
+		"uim-oop": "~>0.19.6"
+	}
+}
