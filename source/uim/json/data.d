@@ -3,7 +3,7 @@
 import std.string;
 import uim.json;
 
-class DJSONData {
+/*class DJSONData {
 private:
 	string _name;
 	DJSONValue _value;
@@ -39,4 +39,4 @@ auto JSONData(string name, string value) { return new DJSONData(name, value); }
 
 unittest {
 
-}
+}*/

@@ -55,7 +55,8 @@ class DJSONValue {
 }
 auto JSONValue() { return JSONNull; }
 
-auto JSONValue(DJSONValue value) { return value/*.dup*/; }
+/*
+auto JSONValue(DJSONValue value) { return value/*.dup* /; }
 auto JSONValue(string value) { return JSONString(value); }
 auto JSONValue(int value) { return JSONNumber(value); }
 auto JSONValue(double value) { return JSONNumber(value); }
@@ -63,8 +64,8 @@ auto JSONValue(bool value) { return JSONBoolean(value); }
 auto JSONValue(DJSONArray value) { return JSONArray(value); }
 auto JSONValue(DJSONObject value) { return JSONObject(value); }
 
-auto JSONValue(DJSONValue[] values) { return JSONArray(values)/*.dup*/; }
+auto JSONValue(DJSONValue[] values) { return JSONArray(values)/ *.dup* / ; }
 auto JSONValue(string[] values) { return JSONArray(values); }
 auto JSONValue(int[] values) { return JSONArray(values); }
 auto JSONValue(double[] values) { return JSONArray(values); }
-auto JSONValue(bool[] values) { return JSONArray(values); }
+auto JSONValue(bool[] values) { return JSONArray(values); }*/

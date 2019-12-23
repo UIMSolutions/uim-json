@@ -7,18 +7,21 @@
 import std.stdio;
 import std.string;
 
+import vibe.d;
+
 public import uim.core;
 public import uim.oop;
 
-public import uim.json.data;
+public import uim.json.convert;
+public import uim.json.classes.data;
 
-public import uim.json.value;
-public import uim.json.number;
-public import uim.json.object_;
-public import uim.json.string_;
-public import uim.json.array_;
-public import uim.json.boolean;
-public import uim.json.null_;
+public import uim.json.classes.value;
+public import uim.json.classes.number;
+public import uim.json.classes.object_;
+public import uim.json.classes.string_;
+public import uim.json.classes.array_;
+public import uim.json.classes.boolean;
+public import uim.json.classes.null_;
 
 public import uim.json.schema;
 
@@ -101,7 +104,7 @@ class JSON {
 		if (auto txt = strip(text)) {
 			switch (txt[0]) {
 				case '{': return JSONObject(text);
-				case '[': return JSONArray(text);
+//				case '[': return JSONArray(text);
 				default: writeln("Wrong character: ", txt[0]);
 			}
 		}
@@ -110,19 +113,3 @@ class JSON {
 	
 	this() {}
 }
-
-Json toJson(Json json, string[] props) {
-	Json result = Json.emptyObject;
-	foreach(prop; props) {
-		if (prop in json) result[prop] = json["prop"];
-	}
-	return result;
-}
-
-unittest {
-	import std.stdio;
-
-	writeln("Loading uim.json...");
-}
-
-
