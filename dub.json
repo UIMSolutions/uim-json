@@ -1,27 +1,13 @@
 {
-	"name": "uim-json",
-	"authors": [ "UI Manufaktur Team" ],
-	"description": "[Test] D Library for JSON",
-	"copyright": "Copyright © 2019, UI Manufaktur UG",
-	"license": "Apache 2.0",
-	"targetType": "library",
-	"dependencies": {
-		"vibe-d": "~>0.8.6"
-	},
-	"sourcePaths": [
-		"../uim-core",
-		"../uim-oop",
-		"../uim-web",
-		"../uim-css",
-		"../uim-javascript",
-		"./"
-	],
-	"importPaths": [
-		"../uim-core",
-		"../uim-oop",
-		"../uim-web",
-		"../uim-css",
-		"../uim-javascript",
-		"./"
-	]
+    "name": "uim-json",
+    "authors": ["UI Manufaktur Team"],
+    "description": "D Library for JSON",
+    "copyright": "Copyright © 2019, UI Manufaktur UG",
+    "license": "Apache 2.0",
+    "targetType": "library",
+    "dependencies": {
+        "vibe-d": "~>0.9.0-alpha.4",
+        "uim-core": "~>0.20.4",
+        "uim-oop": "~>0.20.4"
+    }
 }
