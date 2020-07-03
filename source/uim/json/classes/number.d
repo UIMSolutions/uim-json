@@ -2,14 +2,14 @@
 
 import uim.json;
 
-class DJSONNumber : DJSONValue {
+class DJSNNumber : DJSNValue {
 private:
 	double _value = 0;
 public:
 	this() { }
 	this(double value) { this.value = value; }
 	this(string value) { this.value = value; }
-	this(DJSONNumber value) { this.value = value; }
+	this(DJSNNumber value) { this.value = value; }
 	alias value this;
 
 	@property override size_t length() { return 1; }
@@ -17,15 +17,15 @@ public:
 	@property void value(int newValue) { _value = newValue; }
 	@property void value(double newValue) { _value = newValue; }
 	@property void value(string newValue) { import std.conv; value = to!double(newValue); }
-	@property void value(DJSONNumber newValue) { value = newValue.value; }
-	@property void value(DJSONValue newValue) { value = newValue.toString; }
+	@property void value(DJSNNumber newValue) { value = newValue.value; }
+	@property void value(DJSNValue newValue) { value = newValue.toString; }
 
 	@property double value() { return _value; }
 
 	@property double get() { return _value; }
 
 
-	override DJSONValue dup() { return JSONNumber(_value); }
+	override DJSNValue dup() { return JSNNumber(_value); }
 
 	override string toString() {
 		import std.conv;
@@ -33,6 +33,6 @@ public:
 		return to!string(_value);
 	}
 }
-auto JSONNumber() { return new DJSONNumber(); }
-auto JSONNumber(T)(T value) { return new DJSONNumber(value); }
+auto JSNNumber() { return new DJSNNumber(); }
+auto JSNNumber(T)(T value) { return new DJSNNumber(value); }
 

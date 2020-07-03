@@ -26,10 +26,10 @@ class JsonSchema {
 		return "{ %s }".format(results.join(",\n"));
 	}
 }
-auto JSONSCHEMA() { return new JsonSchema; }
+auto JSNSCHEMA() { return new JsonSchema; }
 
 unittest {
-	writeln(JSONSCHEMA
+	writeln(JSNSCHEMA
 		.schema("http://json-schema.org/draft-04/schema#")
 		.title("Person")
 		.type(PrimitiveTypes.OBJECT)

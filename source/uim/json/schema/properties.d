@@ -29,7 +29,7 @@ class JsonProperties { // : Map!(string, SchemaProperty) {
 		return cast(O)this;
 	}
 
-//	string toJSON() {
+//	string toJSN() {
 //		string[] props;
 //		foreach(k; keys) {
 //

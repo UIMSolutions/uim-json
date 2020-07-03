@@ -2,16 +2,16 @@
 
 import uim.json;
 
-class DJSONString : DJSONValue {
+class DJSNString : DJSNValue {
 	string _value;
 
 	this() { }
 	this(string value) { this.value = value; }
-	this(DJSONString value) { this.value = value.value; }
+	this(DJSNString value) { this.value = value.value; }
 	alias value this;
 
 	@property void value(string newValue) { _value = newValue; }
-	@property void value(DJSONValue newValue) { value = newValue.toString; }
+	@property void value(DJSNValue newValue) { value = newValue.toString; }
 
 	@property string value() { return _value; }
 	@property override size_t length() { return 1; }
@@ -24,19 +24,19 @@ class DJSONString : DJSONValue {
 		static if (op == "~") { _value ~= to!string(rhs); return cast(O)this; }
 		else static assert(0, "Operator "~op~" not implemented");
 	}
-	O opBinary(string op, this O, T)(DJSONValue rhs) {
+	O opBinary(string op, this O, T)(DJSNValue rhs) {
 		static if (op == "~") { _value ~= rhs.toString; return cast(O)this; }
 		else static assert(0, "Operator "~op~" not implemented");
 	}
 
 	string opCast(T : string)() { return _value; }
 
-	override DJSONValue dup() { return JSONString(value); }
+	override DJSNValue dup() { return JSNString(value); }
 	override string toString() {
 		import std.string;
 		return `"%s"`.format(value);
 	}
 }
-auto JSONString() { return new DJSONString(); }
-auto JSONString(T)(T value) { return new DJSONString(value); }
+auto JSNString() { return new DJSNString(); }
+auto JSNString(T)(T value) { return new DJSNString(value); }
 

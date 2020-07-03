@@ -2,13 +2,13 @@
 
 import uim.json;
 
-class DJSONNull : DJSONValue {
+class DJSNNull : DJSNValue {
 	@property override size_t length() { return 1; }
 
-	override DJSONNull dup() { return JSONNull(); }
+	override DJSNNull dup() { return JSNNull(); }
 	override string toString() {
 		return "null";
 	}
 }
-auto JSONNull() { return new DJSONNull(); }
+auto JSNNull() { return new DJSNNull(); }
 

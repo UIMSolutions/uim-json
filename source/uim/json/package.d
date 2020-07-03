@@ -1,16 +1,19 @@
 ﻿module uim.json;
 
 /++ 
- The file type for JSON files is ".json"
- The MIME type for JSON text is "application/json"
+ The file type for JSN files is ".json"
+ The MIME type for JSN text is "application/json"
  +/
-import std.stdio;
-import std.string;
+public import std.stdio;
+public import std.string;
 
-import vibe.d;
+public import vibe.d;
 
 public import uim.core;
 public import uim.oop;
+
+public import uim.json.vibe.bson;
+public import uim.json.vibe.json;
 
 public import uim.json.convert;
 public import uim.json.classes.data;
@@ -97,14 +100,14 @@ string readNextFieldName(string jsonText, bool strict = false) {
 	return jsonText.subStringBetweenStrings("\"", "\"", strict);
 }
 
-class JSON {
-	static DJSONValue fromText(string text) {
-		DJSONValue result;
+class JSN {
+	static DJSNValue fromText(string text) {
+		DJSNValue result;
 		
 		if (auto txt = strip(text)) {
 			switch (txt[0]) {
-				case '{': return JSONObject(text);
-//				case '[': return JSONArray(text);
+				case '{': return JSNObject(text);
+//				case '[': return JSNArray(text);
 				default: writeln("Wrong character: ", txt[0]);
 			}
 		}
