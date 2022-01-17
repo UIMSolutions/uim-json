@@ -1,13 +1,13 @@
 {
-    "name": "uim-json",
-    "authors": ["UI Manufaktur Team"],
-    "description": "D Library for JSON",
-    "copyright": "Copyright © 2019, UI Manufaktur UG",
-    "license": "Apache 2.0",
-    "targetType": "library",
-    "dependencies": {
-        "vibe-d": "~>0.9.0-alpha.4",
-        "uim-core": "~>0.20.4",
-        "uim-oop": "~>0.20.4"
-    }
+	"name": "uim-json",
+	"authors": ["UI Manufaktur Team"],
+	"description": "D Library for JSON",
+	"copyright": "Copyright © 2017 - 2022, UI Manufaktur UG",
+	"license": "MIT",
+	"targetType": "library",
+	"dependencies": {
+			"vibe-d": "~>0.9.4",
+			"uim-core": "~>22.1.1",
+			"uim-oop": "~>22.1.1"	
+	}
 }
