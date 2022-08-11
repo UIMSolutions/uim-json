@@ -8,7 +8,7 @@ auto bsonToStringAA(Bson bson) {
   foreach (string key, value; bson) writefln("%s: %s", key, value);
   return results; 
 }
-unittest{
-  auto test = ["a":"b", "c":"d"];
-  writeln(bsonToStringAA(serializeToBson(test)));
-}
+version(test_uim_json) { unittest {
+/*   auto test = ["a":"b", "c":"d"];
+  writeln(bsonToStringAA(serializeToBson(test))); */
+}}
