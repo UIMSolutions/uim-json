@@ -15,6 +15,6 @@ enum PrimitiveTypes : string {
 	STRING = "string" //A string of Unicode code points, from the JSN "string" production
 }
 
-unittest {
+version(test_uim_json) { unittest {
 	assert(PrimitiveTypes.STRING == "string");
-}
+}}

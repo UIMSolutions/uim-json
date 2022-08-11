@@ -37,6 +37,6 @@ auto JSNData(string name) { return new DJSNData(name); }
 auto JSNData(string name, DJSNValue value) { return new DJSNData(name, value); }
 auto JSNData(string name, string value) { return new DJSNData(name, value); }
 
-unittest {
+version(test_uim_json) { unittest {
 
 }*/

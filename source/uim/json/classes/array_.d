@@ -49,7 +49,7 @@ class DJSNArray : DJSNValue {
 		_values ~= value;
 		return cast(O)this;
 	}
-	unittest {
+	version(test_uim_json) { unittest {
 		/// test
 	}
 	

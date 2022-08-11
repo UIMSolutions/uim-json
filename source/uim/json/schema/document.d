@@ -28,7 +28,7 @@ class JsonSchema {
 }
 auto JSNSCHEMA() { return new JsonSchema; }
 
-unittest {
+version(test_uim_json) { unittest {
 	writeln(JSNSCHEMA
 		.schema("http://json-schema.org/draft-04/schema#")
 		.title("Person")
@@ -36,4 +36,4 @@ unittest {
 		.description("A representation of a person")
 		.required(["familyName", "givenName"])
 		);
-}
+}}
