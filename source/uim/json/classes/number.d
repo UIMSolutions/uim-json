@@ -10,15 +10,33 @@ public:
 	this(double value) { this.value = value; }
 	this(string value) { this.value = value; }
 	this(DJSNNumber value) { this.value = value; }
-	alias value this;
+	// alias value this;
 
 	@property override size_t length() { return 1; }
 
-	@property void value(int newValue) { _value = newValue; }
-	@property void value(double newValue) { _value = newValue; }
-	@property void value(string newValue) { import std.conv; value = to!double(newValue); }
-	@property void value(DJSNNumber newValue) { value = newValue.value; }
-	@property void value(DJSNValue newValue) { value = newValue.toString; }
+	@property void value(this O)(int newValue) { _value = newValue; 
+		return cast(O)this;
+	}
+
+	@property O value(this O)(double newValue) { _value = newValue; 
+		return cast(O)this;
+	}
+
+	@property O value(this O)(string newValue) { 
+		import std.conv; 
+		this.value(to!double(newValue)); 
+		return cast(O)this;
+	}
+
+	@property O value(this O)(DJSNNumber newValue) { 
+		value = newValue.value; 
+		return cast(O)this;
+	}
+
+	@property O value(this O)(DJSNValue newValue) { value = newValue.toString; 
+		return cast(O)this;
+	}
+
 
 	@property double value() { return _value; }
 

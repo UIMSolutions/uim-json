@@ -3,17 +3,17 @@
 import uim.json;
 
 class DJSNString : DJSNValue {
-	string _value;
-
 	this() { }
-	this(string value) { this.value = value; }
-	this(DJSNString value) { this.value = value.value; }
-	alias value this;
+	this(string value) { this().value(value); }
+	this(DJSNString value) { this().value(value.value); }
+	// alias value this;
 
-	@property void value(string newValue) { _value = newValue; }
-	@property void value(DJSNValue newValue) { value = newValue.toString; }
+	mixin(OProperty!("string", "value"));
+	@property O value(this O)(DJSNValue newValue) { 
+		this.value(newValue.toString); 
+		return cast(O)this;
+	}
 
-	@property string value() { return _value; }
 	@property override size_t length() { return 1; }
 
 	O opBinary(string op, this O)(string rhs) {
