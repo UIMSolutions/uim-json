@@ -29,14 +29,13 @@ public:
 	}
 
 	@property O value(this O)(DJSNNumber newValue) { 
-		value = newValue.value; 
+		_value = newValue.value; 
 		return cast(O)this;
 	}
 
 	@property O value(this O)(DJSNValue newValue) { value = newValue.toString; 
 		return cast(O)this;
 	}
-
 
 	@property double value() { return _value; }
 
