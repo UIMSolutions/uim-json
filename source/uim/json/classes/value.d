@@ -32,7 +32,7 @@ class DJSNValue {
 	bool exists(size_t index) { return (this[index] ? true : false); }
 	bool exists(string name) { return (this[name] ? true : false); }
 	bool pathExists(string[] names...) {
-		if (names.length == 0) return false;
+		if (names.length == 0) { return false; }
 		if (auto first = this[names[0]]) {
 			if (names.length > 1) return first.pathExists(names[1..$]);
 			return true;

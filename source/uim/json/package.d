@@ -66,13 +66,13 @@ size_t[] positionOfStrings(string text, string[] searchStrings, size_t start = 0
 
 bool stringExists(string text, string searchString, bool strict = false) {
 	auto pos = text.indexOf(searchString);
-	if (pos == -1) return false;
+	if (pos == -1) { return false; }
 
-	if (pos == 0) return true;
+	if (pos == 0) { return true; }
 	if (strict) while ((text[pos-1] == '\\') && (pos != -1)) {
 		pos = text.indexOf(searchString, pos+1);
 	}
-	if (pos == -1) return false;
+	if (pos == -1) { return false; }
 	return true;
 }
 string subStringBetweenStrings(string text, string leftString, string rightString, bool strict = false) {

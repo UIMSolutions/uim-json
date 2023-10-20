@@ -582,7 +582,7 @@
 //		// Default doesn't work well since store is a union.  Compare only
 //		// what should be in store.
 //		// This is @trusted to remain nogc, nothrow, fast, and usable from @safe code.
-//		if (type_tag != rhs.type_tag) return false;
+//		if (type_tag != rhs.type_tag) { return false; }
 //		
 //		final switch (type_tag)
 //		{
@@ -739,7 +739,7 @@
 //		auto c2 = peekChar();
 //		static if (!CaseSensitive) c2 = toLower(c2);
 //		
-//		if (c2 != c) return false;
+//		if (c2 != c) { return false; }
 //		
 //		getChar();
 //		return true;
