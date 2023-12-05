@@ -6,7 +6,7 @@ class JsonProperties { // : Map!(string, SchemaProperty) {
 	this() {}
 
 	string[] keys;
-	string[string] values;
+	STRINGAA values;
 
 	string opIndex(string name) {
 		if (name in values) return values[name]; return null;

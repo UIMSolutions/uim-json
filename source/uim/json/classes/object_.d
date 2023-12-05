@@ -15,7 +15,7 @@ public:
 	this(DJSNValue[string] values) { this.values = values; }
 	this(bool[string] values) { this.values = values; }
 	this(double[string] values) { this.values = values; }
-	this(string[string] values) { this.values = values; }
+	this(STRINGAA values) { this.values = values; }
 
 	@property auto fields() { return _values.keys; }
 
@@ -26,7 +26,7 @@ public:
 
 	void opCall(DJSNObject value) { this.values = value.values; }
 	void opCall(DJSNValue[string] values) { this.values = values; }
-	void opCall(string[string] values) { this.values = values; }
+	void opCall(STRINGAA values) { this.values = values; }
 
 	//alias opIndexAssign = super.opIndexAssign;
 	O opIndexAssign(this O, T)(T value, string name) if ((isNarrowString!T) && (isArray!T)) { _values[name] = JSNString(value); return cast(O)this; }
@@ -84,7 +84,7 @@ public:
 auto JSNObject() { return new DJSNObject(); }
 auto JSNObject(DJSNObject value) { return new DJSNObject(value); }
 auto JSNObject(DJSNValue[string] values) { return new DJSNObject(values); }
-auto JSNObject(string[string] values) { return new DJSNObject(values); }
+auto JSNObject(STRINGAA values) { return new DJSNObject(values); }
 auto JSNObject(bool[string] values) { return new DJSNObject(values); }
 auto JSNObject(double[string] values) { return new DJSNObject(values); }
 

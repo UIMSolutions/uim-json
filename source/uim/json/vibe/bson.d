@@ -3,7 +3,7 @@ module uim.json.vibe.bson;
 import uim.json; 
 
 auto bsonToStringAA(Bson bson) {
-  string[string] results;
+  STRINGAA results;
   deserializeBson(results, bson);
   foreach (string key, value; bson) writefln("%s: %s", key, value);
   return results; 
